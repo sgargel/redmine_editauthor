@@ -14,11 +14,20 @@ Follow standard Redmine plugin installation procedure.
 
 Configuration
 -------------
+Set following permission for roles:
 
- * Set "Edit author" permission for roles.
+ * "Edit author"
 
     Authorized users will be able to edit issue author by simply changing field
     in edit form.
+
+ * "Set original author"
+
+    Authorized users will be able to set a different issue author when creating new issue.
+
+ * "Can't be set as author"
+
+    Users with this permission can't be choosed as author.
 
 
 Requirements
