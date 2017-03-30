@@ -58,7 +58,7 @@ module RedmineEditauthor
         User.active.eager_load(:members).where(
           "#{Member.table_name}.project_id = ? OR #{User.table_name}.admin = ?",
           project.id, true
-        ).select { |u| u.allowed_to?(:can_be_set_as_issue_author, project) } # permission filter
+        ).select { |u| u.allowed_to?(:add_issues, project) && !u.allowed_to?(:cant_be_set_as_issue_author, project) }
       end
 
       def author_select_field(options)
